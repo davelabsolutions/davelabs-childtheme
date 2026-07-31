@@ -1257,8 +1257,8 @@ body.dl-command-home {
 
 .dl-footer-main {
 	display: grid;
-	grid-template-columns: minmax(260px, 1.2fr) repeat(3, minmax(0, 0.72fr));
-	gap: 34px;
+	grid-template-columns: minmax(260px, 1.05fr) minmax(150px, 0.58fr) minmax(150px, 0.58fr) minmax(300px, 1fr);
+	gap: 26px;
 	padding-bottom: 32px;
 }
 
@@ -1298,9 +1298,9 @@ body.dl-command-home {
 
 .dl-footer-contact-link {
 	display: grid;
-	grid-template-columns: 28px minmax(0, 1fr);
+	grid-template-columns: 20px minmax(0, 1fr);
 	align-items: center;
-	gap: 10px;
+	gap: 7px;
 }
 
 .dl-footer-contact-link svg {
@@ -1312,7 +1312,8 @@ body.dl-command-home {
 
 .dl-footer-contact-link span {
 	min-width: 0;
-	overflow-wrap: anywhere;
+	overflow-wrap: normal;
+	white-space: nowrap;
 }
 
 .dl-footer-bottom {
@@ -1338,7 +1339,12 @@ body.dl-command-home {
 	}
 
 	.dl-footer-main {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-columns: minmax(240px, 1fr) minmax(300px, 1.2fr);
+	}
+
+	.dl-footer-brand,
+	.dl-footer-column:nth-child(2) {
+		grid-column: auto;
 	}
 
 	.dl-service-card {
@@ -1622,6 +1628,11 @@ body.dl-command-home {
 
 	.dl-footer-main {
 		grid-template-columns: 1fr;
+	}
+
+	.dl-footer-contact-link span {
+		overflow-wrap: anywhere;
+		white-space: normal;
 	}
 
 	.dl-footer-bottom {

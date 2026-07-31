@@ -416,8 +416,7 @@ $properties = array(
 		<p class="dl-kicker">Siguiente paso</p>
 		<h2>Hablemos de tu operación tecnológica y armemos una ruta clara.</h2>
 		<div class="dl-actions">
-			<a class="dl-button dl-button-primary" href="mailto:contacto@davelabs.com.mx">contacto@davelabs.com.mx</a>
-			<a class="dl-button dl-button-secondary" href="https://wa.me/5215534546470" target="_blank" rel="noreferrer">WhatsApp</a>
+			<a class="dl-button dl-button-primary" href="https://wa.me/527702068784" target="_blank" rel="noreferrer">Comienza con Davelabs</a>
 		</div>
 	</section>
 
