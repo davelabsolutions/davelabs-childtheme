@@ -10,13 +10,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 function davelabs_command_assets() {
-	$theme = wp_get_theme();
+	$css_path = get_stylesheet_directory() . '/assets/css/davelabs-command.css';
+	$js_path  = get_stylesheet_directory() . '/assets/js/davelabs-command.js';
+	$css_ver  = file_exists( $css_path ) ? filemtime( $css_path ) : wp_get_theme()->get( 'Version' );
+	$js_ver   = file_exists( $js_path ) ? filemtime( $js_path ) : wp_get_theme()->get( 'Version' );
 
 	wp_enqueue_style(
 		'davelabs-command',
 		get_stylesheet_directory_uri() . '/assets/css/davelabs-command.css',
 		array( 'imroz-style' ),
-		$theme->get( 'Version' )
+		$css_ver
 	);
 
 	if ( is_front_page() ) {
@@ -24,7 +27,7 @@ function davelabs_command_assets() {
 			'davelabs-command',
 			get_stylesheet_directory_uri() . '/assets/js/davelabs-command.js',
 			array(),
-			$theme->get( 'Version' ),
+			$js_ver,
 			true
 		);
 	}
