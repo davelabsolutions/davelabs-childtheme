@@ -753,29 +753,8 @@ body.dl-command-home {
 .dl-property-slider {
 	position: relative;
 	overflow: hidden;
-	padding-bottom: 42px;
+	padding-bottom: 50px;
 	user-select: none;
-}
-
-.dl-property-slider::before,
-.dl-property-slider::after {
-	position: absolute;
-	z-index: 7;
-	top: 0;
-	bottom: 42px;
-	width: min(10vw, 120px);
-	pointer-events: none;
-	content: "";
-}
-
-.dl-property-slider::before {
-	left: 0;
-	background: linear-gradient(90deg, #030407 0%, rgba(3, 4, 7, 0.72) 34%, transparent 100%);
-}
-
-.dl-property-slider::after {
-	right: 0;
-	background: linear-gradient(270deg, #030407 0%, rgba(3, 4, 7, 0.72) 34%, transparent 100%);
 }
 
 .dl-property-track {
@@ -795,24 +774,30 @@ body.dl-command-home {
 	position: relative;
 	display: grid;
 	width: 100%;
-	min-height: clamp(500px, 42vw, 620px);
+	min-height: clamp(430px, 36vw, 560px);
 	flex: 0 0 100%;
 	align-items: center;
 	overflow: hidden;
-	padding: clamp(34px, 5vw, 72px);
+	padding: clamp(34px, 5vw, 68px);
 	border: 1px solid rgba(122, 174, 255, 0.26);
 	border-radius: var(--dl-radius);
 	background:
-		radial-gradient(circle at 48% 0%, rgba(75, 141, 227, 0.26), transparent 44%),
-		linear-gradient(135deg, rgba(18, 22, 38, 0.94), rgba(5, 7, 12, 0.92));
-	box-shadow: var(--dl-shadow);
-	backdrop-filter: blur(20px);
+		radial-gradient(circle at 28% 0%, rgba(75, 141, 227, 0.24), transparent 38%),
+		linear-gradient(135deg, #101827 0%, #070b13 48%, #030407 100%);
+	box-shadow:
+		0 34px 90px rgba(0, 0, 0, 0.44),
+		inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .dl-property-banner::before {
 	position: absolute;
 	inset: -1px;
 	pointer-events: none;
+	background-image:
+		linear-gradient(rgba(122, 174, 255, 0.035) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(122, 174, 255, 0.035) 1px, transparent 1px);
+	background-size: 120px 120px;
+	mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.68), transparent 86%);
 	content: "";
 }
 
@@ -822,37 +807,41 @@ body.dl-command-home {
 	inset: 0;
 	pointer-events: none;
 	background:
-		linear-gradient(180deg, rgba(3, 4, 7, 0.06), rgba(3, 4, 7, 0.24)),
-		radial-gradient(circle at 22% 0%, rgba(75, 141, 227, 0.18), transparent 42%);
+		linear-gradient(90deg, rgba(3, 4, 7, 0) 0%, rgba(3, 4, 7, 0.16) 62%, rgba(3, 4, 7, 0.54) 100%),
+		linear-gradient(180deg, rgba(3, 4, 7, 0.02), rgba(3, 4, 7, 0.34));
 	content: "";
 }
 
 .dl-property-contacore::before {
 	background:
-		radial-gradient(circle at 84% 22%, rgba(74, 211, 255, 0.34), transparent 32%),
-		radial-gradient(circle at 18% 10%, rgba(75, 141, 227, 0.34), transparent 38%);
+		linear-gradient(rgba(122, 174, 255, 0.035) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(122, 174, 255, 0.035) 1px, transparent 1px),
+		radial-gradient(circle at 20% 8%, rgba(75, 141, 227, 0.2), transparent 38%);
+	background-size: 120px 120px, 120px 120px, auto;
 }
 
 .dl-property-praeva::before {
 	background:
-		radial-gradient(circle at 82% 18%, rgba(45, 230, 87, 0.32), transparent 36%),
-		radial-gradient(circle at 18% 18%, rgba(122, 174, 255, 0.18), transparent 32%),
-		linear-gradient(135deg, rgba(18, 56, 50, 0.44), rgba(31, 22, 46, 0.18));
+		linear-gradient(rgba(122, 174, 255, 0.035) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(122, 174, 255, 0.035) 1px, transparent 1px),
+		radial-gradient(circle at 22% 8%, rgba(72, 126, 226, 0.2), transparent 38%),
+		radial-gradient(circle at 82% 24%, rgba(45, 230, 87, 0.16), transparent 36%);
+	background-size: 120px 120px, 120px 120px, auto, auto;
 }
 
 .dl-property-copy {
 	position: relative;
-	z-index: 3;
-	width: min(560px, 58%);
+	z-index: 4;
+	width: min(560px, 54%);
 }
 
 .dl-property-visual {
 	position: absolute;
-	z-index: 1;
+	z-index: 2;
 	top: 0;
 	right: 0;
 	bottom: 0;
-	left: 42%;
+	left: 38%;
 	overflow: hidden;
 }
 
@@ -862,8 +851,8 @@ body.dl-command-home {
 	inset: 0;
 	pointer-events: none;
 	background:
-		linear-gradient(90deg, rgba(5, 7, 12, 1) 0%, rgba(5, 7, 12, 0.92) 10%, rgba(5, 7, 12, 0.52) 25%, rgba(5, 7, 12, 0.12) 45%, rgba(5, 7, 12, 0.26) 100%),
-		linear-gradient(180deg, rgba(5, 7, 12, 0.08), rgba(5, 7, 12, 0.36));
+		linear-gradient(90deg, #070b13 0%, rgba(7, 11, 19, 0.94) 9%, rgba(7, 11, 19, 0.58) 26%, rgba(7, 11, 19, 0.18) 48%, rgba(7, 11, 19, 0.18) 100%),
+		linear-gradient(180deg, rgba(7, 11, 19, 0.08), rgba(7, 11, 19, 0.46));
 	content: "";
 }
 
@@ -874,17 +863,18 @@ body.dl-command-home {
 	padding: 8px 11px;
 	border: 1px solid rgba(255, 255, 255, 0.16);
 	border-radius: 999px;
-	background: rgba(255, 255, 255, 0.055);
+	background: rgba(255, 255, 255, 0.045);
 	color: rgba(232, 242, 255, 0.82);
 	font-size: 12px;
 	font-weight: 900;
+	letter-spacing: 0;
 	text-transform: uppercase;
 }
 
 .dl-property-banner h3 {
 	margin: 0;
 	color: #fff;
-	font-size: clamp(44px, 5.6vw, 78px);
+	font-size: clamp(48px, 6.2vw, 94px);
 	font-weight: 900;
 	line-height: 0.98;
 }
@@ -893,8 +883,8 @@ body.dl-command-home {
 	max-width: 560px;
 	margin: 22px 0 0;
 	color: rgba(239, 242, 255, 0.7);
-	font-size: 16px;
-	line-height: 1.72;
+	font-size: 17px;
+	line-height: 1.7;
 }
 
 .dl-property-points {
@@ -936,15 +926,7 @@ body.dl-command-home {
 	height: 100%;
 	object-fit: cover;
 	object-position: center right;
-	filter: saturate(1.04) contrast(1.02) brightness(0.82);
-}
-
-.dl-property-contacore .dl-property-visual img {
-	object-position: 76% center;
-}
-
-.dl-property-praeva .dl-property-visual img {
-	object-position: center 18%;
+	filter: saturate(1.02) contrast(1.02) brightness(0.86);
 }
 
 .dl-property-dots {
@@ -964,7 +946,7 @@ body.dl-command-home {
 	padding: 0;
 	border: 1px solid rgba(255, 255, 255, 0.34);
 	border-radius: 999px;
-	background: rgba(255, 255, 255, 0.16);
+	background: rgba(255, 255, 255, 0.12);
 	cursor: pointer;
 	transition: width 180ms ease, border-color 180ms ease, background 180ms ease;
 }
@@ -1353,7 +1335,7 @@ body.dl-command-home {
 
 	.dl-property-banner {
 		width: 100%;
-		grid-template-columns: minmax(0, 0.96fr) minmax(300px, 1.04fr);
+		min-height: 500px;
 	}
 }
 
@@ -1417,22 +1399,22 @@ body.dl-command-home {
 
 	.dl-property-banner {
 		width: 100%;
-		min-height: 620px;
+		min-height: 560px;
 		align-content: start;
 	}
 
 	.dl-property-banner::after {
 		background:
-			linear-gradient(180deg, rgba(3, 4, 7, 0.1), rgba(3, 4, 7, 0.38)),
-			radial-gradient(circle at 22% 0%, rgba(75, 141, 227, 0.16), transparent 42%);
+			linear-gradient(90deg, rgba(3, 4, 7, 0.02), rgba(3, 4, 7, 0.3)),
+			linear-gradient(180deg, rgba(3, 4, 7, 0.04), rgba(3, 4, 7, 0.46));
 	}
 
 	.dl-property-copy {
-		width: min(100%, 620px);
+		width: min(100%, 560px);
 	}
 
 	.dl-property-visual {
-		left: 30%;
+		left: 34%;
 		min-height: 100%;
 	}
 }
@@ -1553,30 +1535,25 @@ body.dl-command-home {
 
 	.dl-property-banner {
 		width: 100%;
-		min-height: 620px;
+		min-height: 560px;
 		padding: 24px;
 	}
 
 	.dl-property-banner::after {
 		background:
-			linear-gradient(90deg, rgba(5, 7, 12, 0.96), rgba(5, 7, 12, 0.72)),
+			linear-gradient(90deg, rgba(5, 7, 12, 0.96), rgba(5, 7, 12, 0.72), rgba(5, 7, 12, 0.62)),
 			linear-gradient(180deg, rgba(3, 4, 7, 0.2), rgba(3, 4, 7, 0.58));
 	}
 
 	.dl-property-visual {
 		left: 0;
 		min-height: 100%;
-		opacity: 0.42;
+		opacity: 0.52;
 	}
 
 	.dl-property-visual img {
-		filter: saturate(1.02) contrast(1.02) brightness(0.68);
+		filter: saturate(1.02) contrast(1.02) brightness(0.72);
 		object-position: center;
-	}
-
-	.dl-property-slider::before,
-	.dl-property-slider::after {
-		width: 42px;
 	}
 
 	.dl-property-banner h3 {

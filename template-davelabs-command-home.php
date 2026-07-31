@@ -170,20 +170,20 @@ $properties = array(
 		'key'     => 'contacore',
 		'eyebrow' => 'Suite comercial',
 		'title'   => 'Contacore',
-		'text'    => 'Centraliza contactos, seguimiento, reportes y automatizaciones comerciales en un panel diseñado para que los equipos vendan y operen con claridad.',
-		'items'   => array( 'CRM operativo', 'Seguimiento comercial', 'Reportes ejecutivos' ),
+		'text'    => 'Centraliza vacaciones, permisos e incapacidades con roles claros, politicas por empresa, aprobaciones ordenadas y notificaciones automaticas.',
+		'items'   => array( 'Gestion de equipos', 'WhatsApp', 'Reportes' ),
 		'cta'     => 'Ver Contacore',
-		'url'     => home_url( '/contacore/' ),
+		'url'     => 'https://contacore.com.mx/',
 		'image'   => davelabs_command_asset_url( 'assets/img/properties/contacore-landing.png' ),
 	),
 	array(
 		'key'     => 'praeva',
 		'eyebrow' => 'Inteligencia documental',
 		'title'   => 'Praeva',
-		'text'    => 'Organiza expedientes, verificaciones, documentos y decisiones con una experiencia preparada para procesos que necesitan control, trazabilidad y menos fricción.',
-		'items'   => array( 'Expedientes digitales', 'Validación de datos', 'Flujos de aprobación' ),
+		'text'    => 'Monitorea servidores, recursos, servicios, web sites, SSL, latencia, bases de datos y alertas desde un panel moderno.',
+		'items'   => array( '10s', '24/7', 'Web + Infra' ),
 		'cta'     => 'Ver Praeva',
-		'url'     => home_url( '/praeva/' ),
+		'url'     => 'https://praeva.com.mx/',
 		'image'   => davelabs_command_asset_url( 'assets/img/properties/praeva-landing.png' ),
 	),
 );
@@ -326,10 +326,9 @@ $properties = array(
 			<h2>Productos propios para convertir operación compleja en sistemas claros.</h2>
 		</div>
 		<div class="dl-property-slider" data-property-slider aria-label="<?php esc_attr_e( 'Slider de propiedades DaveLabs', 'davelabs-command' ); ?>">
-			<button class="dl-project-arrow dl-project-arrow-prev" type="button" data-property-prev aria-label="<?php esc_attr_e( 'Propiedad anterior', 'davelabs-command' ); ?>">‹</button>
 			<div class="dl-property-track">
 				<?php foreach ( $properties as $index => $property ) : ?>
-					<article class="dl-property-banner dl-property-<?php echo esc_attr( $property['key'] ); ?>" data-property-slide<?php echo 0 === $index ? '' : ' aria-hidden="true"'; ?>>
+					<article class="dl-property-banner dl-property-<?php echo esc_attr( $property['key'] ); ?><?php echo empty( $property['image'] ) ? ' dl-property-no-image' : ''; ?>" data-property-slide<?php echo 0 === $index ? '' : ' aria-hidden="true"'; ?>>
 						<div class="dl-property-copy">
 							<span class="dl-property-eyebrow"><?php echo esc_html( $property['eyebrow'] ); ?></span>
 							<h3><?php echo esc_html( $property['title'] ); ?></h3>
@@ -341,15 +340,14 @@ $properties = array(
 							</div>
 							<a class="dl-button dl-button-primary" href="<?php echo esc_url( $property['url'] ); ?>"><?php echo esc_html( $property['cta'] ); ?></a>
 						</div>
-						<?php if ( ! empty( $property['image'] ) ) : ?>
-							<div class="dl-property-visual" aria-hidden="true">
-								<img src="<?php echo esc_url( $property['image'] ); ?>" alt="" loading="lazy">
-							</div>
-						<?php endif; ?>
+							<?php if ( ! empty( $property['image'] ) ) : ?>
+								<div class="dl-property-visual" aria-hidden="true">
+									<img src="<?php echo esc_url( $property['image'] ); ?>" alt="" loading="lazy">
+								</div>
+							<?php endif; ?>
 					</article>
 				<?php endforeach; ?>
 			</div>
-			<button class="dl-project-arrow dl-project-arrow-next" type="button" data-property-next aria-label="<?php esc_attr_e( 'Propiedad siguiente', 'davelabs-command' ); ?>">›</button>
 			<div class="dl-property-dots" aria-label="<?php esc_attr_e( 'Seleccionar propiedad', 'davelabs-command' ); ?>">
 				<?php foreach ( $properties as $index => $property ) : ?>
 					<button class="<?php echo 0 === $index ? 'is-active' : ''; ?>" type="button" data-property-dot="<?php echo esc_attr( $index ); ?>" aria-label="<?php echo esc_attr( 'Ver ' . $property['title'] ); ?>"<?php echo 0 === $index ? ' aria-current="true"' : ''; ?>></button>
