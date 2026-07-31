@@ -807,8 +807,7 @@ body.dl-command-home {
 	inset: 0;
 	pointer-events: none;
 	background:
-		linear-gradient(90deg, rgba(3, 4, 7, 0) 0%, rgba(3, 4, 7, 0.16) 62%, rgba(3, 4, 7, 0.54) 100%),
-		linear-gradient(180deg, rgba(3, 4, 7, 0.02), rgba(3, 4, 7, 0.34));
+		linear-gradient(90deg, rgba(3, 4, 7, 0) 0%, rgba(3, 4, 7, 0.06) 72%, rgba(3, 4, 7, 0.14) 100%);
 	content: "";
 }
 
@@ -851,8 +850,7 @@ body.dl-command-home {
 	inset: 0;
 	pointer-events: none;
 	background:
-		linear-gradient(90deg, #070b13 0%, rgba(7, 11, 19, 0.94) 9%, rgba(7, 11, 19, 0.58) 26%, rgba(7, 11, 19, 0.18) 48%, rgba(7, 11, 19, 0.18) 100%),
-		linear-gradient(180deg, rgba(7, 11, 19, 0.08), rgba(7, 11, 19, 0.46));
+		linear-gradient(90deg, #070b13 0%, rgba(7, 11, 19, 0.9) 10%, rgba(7, 11, 19, 0.48) 24%, rgba(7, 11, 19, 0.08) 42%, rgba(7, 11, 19, 0) 62%);
 	content: "";
 }
 
@@ -926,7 +924,7 @@ body.dl-command-home {
 	height: 100%;
 	object-fit: cover;
 	object-position: center right;
-	filter: saturate(1.02) contrast(1.02) brightness(0.86);
+	filter: saturate(1.03) contrast(1.01);
 }
 
 .dl-property-dots {
@@ -1405,8 +1403,7 @@ body.dl-command-home {
 
 	.dl-property-banner::after {
 		background:
-			linear-gradient(90deg, rgba(3, 4, 7, 0.02), rgba(3, 4, 7, 0.3)),
-			linear-gradient(180deg, rgba(3, 4, 7, 0.04), rgba(3, 4, 7, 0.46));
+			linear-gradient(90deg, rgba(3, 4, 7, 0), rgba(3, 4, 7, 0.12));
 	}
 
 	.dl-property-copy {
@@ -1541,18 +1538,17 @@ body.dl-command-home {
 
 	.dl-property-banner::after {
 		background:
-			linear-gradient(90deg, rgba(5, 7, 12, 0.96), rgba(5, 7, 12, 0.72), rgba(5, 7, 12, 0.62)),
-			linear-gradient(180deg, rgba(3, 4, 7, 0.2), rgba(3, 4, 7, 0.58));
+			linear-gradient(90deg, rgba(5, 7, 12, 0.36), rgba(5, 7, 12, 0.2), rgba(5, 7, 12, 0.1));
 	}
 
 	.dl-property-visual {
 		left: 0;
 		min-height: 100%;
-		opacity: 0.52;
+		opacity: 1;
 	}
 
 	.dl-property-visual img {
-		filter: saturate(1.02) contrast(1.02) brightness(0.72);
+		filter: saturate(1.03) contrast(1.01);
 		object-position: center;
 	}
 
