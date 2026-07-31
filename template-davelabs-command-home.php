@@ -312,40 +312,43 @@ $properties = array(
 			<p class="dl-kicker">Propiedades de DaveLabs</p>
 			<h2>Productos propios para convertir operación compleja en sistemas claros.</h2>
 		</div>
-		<div class="dl-property-carousel" data-loop-carousel aria-label="<?php esc_attr_e( 'Carrusel de propiedades DaveLabs', 'davelabs-command' ); ?>">
-			<button class="dl-project-arrow dl-project-arrow-prev" type="button" data-loop-prev aria-label="<?php esc_attr_e( 'Propiedad anterior', 'davelabs-command' ); ?>">‹</button>
+		<div class="dl-property-slider" data-property-slider aria-label="<?php esc_attr_e( 'Slider de propiedades DaveLabs', 'davelabs-command' ); ?>">
+			<button class="dl-project-arrow dl-project-arrow-prev" type="button" data-property-prev aria-label="<?php esc_attr_e( 'Propiedad anterior', 'davelabs-command' ); ?>">‹</button>
 			<div class="dl-property-track">
-				<?php for ( $loop = 0; $loop < 2; $loop++ ) : ?>
-					<?php foreach ( $properties as $property ) : ?>
-						<article class="dl-property-banner dl-property-<?php echo esc_attr( $property['key'] ); ?>"<?php echo $loop > 0 ? ' aria-hidden="true"' : ''; ?>>
-							<div class="dl-property-copy">
-								<span class="dl-property-eyebrow"><?php echo esc_html( $property['eyebrow'] ); ?></span>
-								<h3><?php echo esc_html( $property['title'] ); ?></h3>
-								<p><?php echo esc_html( $property['text'] ); ?></p>
-								<div class="dl-property-points">
-									<?php foreach ( $property['items'] as $item ) : ?>
-										<span><?php echo esc_html( $item ); ?></span>
-									<?php endforeach; ?>
+				<?php foreach ( $properties as $index => $property ) : ?>
+					<article class="dl-property-banner dl-property-<?php echo esc_attr( $property['key'] ); ?>" data-property-slide<?php echo 0 === $index ? '' : ' aria-hidden="true"'; ?>>
+						<div class="dl-property-copy">
+							<span class="dl-property-eyebrow"><?php echo esc_html( $property['eyebrow'] ); ?></span>
+							<h3><?php echo esc_html( $property['title'] ); ?></h3>
+							<p><?php echo esc_html( $property['text'] ); ?></p>
+							<div class="dl-property-points">
+								<?php foreach ( $property['items'] as $item ) : ?>
+									<span><?php echo esc_html( $item ); ?></span>
+								<?php endforeach; ?>
+							</div>
+							<a class="dl-button dl-button-primary" href="<?php echo esc_url( $property['url'] ); ?>"><?php echo esc_html( $property['cta'] ); ?></a>
+						</div>
+						<div class="dl-property-visual" aria-hidden="true">
+							<?php if ( ! empty( $property['image'] ) ) : ?>
+								<img src="<?php echo esc_url( $property['image'] ); ?>" alt="" loading="lazy">
+							<?php else : ?>
+								<div class="dl-praeva-ui">
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
 								</div>
-								<a class="dl-button dl-button-primary" href="<?php echo esc_url( $property['url'] ); ?>"><?php echo esc_html( $property['cta'] ); ?></a>
-							</div>
-							<div class="dl-property-visual" aria-hidden="true">
-								<?php if ( ! empty( $property['image'] ) ) : ?>
-									<img src="<?php echo esc_url( $property['image'] ); ?>" alt="" loading="lazy">
-								<?php else : ?>
-									<div class="dl-praeva-ui">
-										<span></span>
-										<span></span>
-										<span></span>
-										<span></span>
-									</div>
-								<?php endif; ?>
-							</div>
-						</article>
-					<?php endforeach; ?>
-				<?php endfor; ?>
+							<?php endif; ?>
+						</div>
+					</article>
+				<?php endforeach; ?>
 			</div>
-			<button class="dl-project-arrow dl-project-arrow-next" type="button" data-loop-next aria-label="<?php esc_attr_e( 'Propiedad siguiente', 'davelabs-command' ); ?>">›</button>
+			<button class="dl-project-arrow dl-project-arrow-next" type="button" data-property-next aria-label="<?php esc_attr_e( 'Propiedad siguiente', 'davelabs-command' ); ?>">›</button>
+			<div class="dl-property-dots" aria-label="<?php esc_attr_e( 'Seleccionar propiedad', 'davelabs-command' ); ?>">
+				<?php foreach ( $properties as $index => $property ) : ?>
+					<button class="<?php echo 0 === $index ? 'is-active' : ''; ?>" type="button" data-property-dot="<?php echo esc_attr( $index ); ?>" aria-label="<?php echo esc_attr( 'Ver ' . $property['title'] ); ?>"<?php echo 0 === $index ? ' aria-current="true"' : ''; ?>></button>
+				<?php endforeach; ?>
+			</div>
 		</div>
 	</section>
 

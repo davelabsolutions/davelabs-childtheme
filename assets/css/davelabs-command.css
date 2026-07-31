@@ -397,7 +397,6 @@ body.dl-command-home {
 
 @media (prefers-reduced-motion: reduce) {
 	.dl-logo-track,
-	.dl-property-track,
 	.dl-project-track {
 		animation: none;
 	}
@@ -751,67 +750,55 @@ body.dl-command-home {
 	text-wrap: balance;
 }
 
-.dl-property-carousel {
+.dl-property-slider {
 	position: relative;
 	overflow: hidden;
-	margin-inline: calc((100vw - min(1180px, calc(100vw - 32px))) / -2);
-	padding: 2px calc((100vw - min(1180px, calc(100vw - 32px))) / 2);
-	cursor: grab;
-	touch-action: pan-y;
+	padding-bottom: 42px;
 	user-select: none;
 }
 
-.dl-property-carousel::before,
-.dl-property-carousel::after {
+.dl-property-slider::before,
+.dl-property-slider::after {
 	position: absolute;
 	z-index: 7;
 	top: 0;
-	bottom: 0;
-	width: min(14vw, 180px);
+	bottom: 42px;
+	width: min(10vw, 120px);
 	pointer-events: none;
 	content: "";
 }
 
-.dl-property-carousel::before {
+.dl-property-slider::before {
 	left: 0;
 	background: linear-gradient(90deg, #030407 0%, rgba(3, 4, 7, 0.72) 34%, transparent 100%);
 }
 
-.dl-property-carousel::after {
+.dl-property-slider::after {
 	right: 0;
 	background: linear-gradient(270deg, #030407 0%, rgba(3, 4, 7, 0.72) 34%, transparent 100%);
 }
 
-.dl-property-carousel.is-dragging {
-	cursor: grabbing;
-}
-
 .dl-property-track {
 	display: flex;
-	width: max-content;
-	gap: 18px;
-	animation: dlPropertyCarousel 30s linear infinite;
+	transform: translate3d(calc(var(--dl-property-index, 0) * -100%), 0, 0);
+	transition: transform 520ms ease;
 	will-change: transform;
 }
 
-.dl-property-carousel.is-manual .dl-property-track {
-	animation: none;
-	transform: translate3d(var(--dl-project-offset, 0px), 0, 0);
-	transition: transform 360ms ease;
-}
-
-.dl-property-carousel.is-dragging .dl-property-track {
-	transition: none;
+@media (prefers-reduced-motion: reduce) {
+	.dl-property-track {
+		transition: none;
+	}
 }
 
 .dl-property-banner {
 	position: relative;
 	display: grid;
-	width: clamp(740px, 74vw, 1040px);
+	width: 100%;
 	min-height: 430px;
 	grid-template-columns: minmax(0, 0.92fr) minmax(340px, 1.08fr);
 	gap: 28px;
-	flex: 0 0 auto;
+	flex: 0 0 100%;
 	align-items: center;
 	overflow: hidden;
 	padding: clamp(28px, 4vw, 54px);
@@ -966,6 +953,34 @@ body.dl-command-home {
 
 .dl-praeva-ui span:nth-child(4) {
 	width: 88%;
+}
+
+.dl-property-dots {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 8;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.dl-property-dots button {
+	width: 10px;
+	height: 10px;
+	padding: 0;
+	border: 1px solid rgba(255, 255, 255, 0.34);
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.16);
+	cursor: pointer;
+	transition: width 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.dl-property-dots button.is-active {
+	width: 32px;
+	border-color: rgba(122, 174, 255, 0.74);
+	background: var(--dl-blue-soft);
 }
 
 .dl-use-grid {
@@ -1245,16 +1260,6 @@ body.dl-command-home {
 	}
 }
 
-@keyframes dlPropertyCarousel {
-	from {
-		transform: translate3d(0, 0, 0);
-	}
-
-	to {
-		transform: translate3d(calc(-50% - 9px), 0, 0);
-	}
-}
-
 .dl-cta {
 	margin-bottom: 54px;
 	padding: 78px;
@@ -1355,7 +1360,7 @@ body.dl-command-home {
 	}
 
 	.dl-property-banner {
-		width: clamp(660px, 84vw, 920px);
+		width: 100%;
 		grid-template-columns: minmax(0, 0.96fr) minmax(300px, 1.04fr);
 	}
 }
@@ -1419,7 +1424,7 @@ body.dl-command-home {
 	}
 
 	.dl-property-banner {
-		width: min(78vw, 680px);
+		width: 100%;
 		min-height: 620px;
 		grid-template-columns: 1fr;
 		align-content: start;
@@ -1545,13 +1550,13 @@ body.dl-command-home {
 	}
 
 	.dl-property-banner {
-		width: min(86vw, 420px);
+		width: 100%;
 		min-height: 620px;
 		padding: 24px;
 	}
 
-	.dl-property-carousel::before,
-	.dl-property-carousel::after {
+	.dl-property-slider::before,
+	.dl-property-slider::after {
 		width: 42px;
 	}
 

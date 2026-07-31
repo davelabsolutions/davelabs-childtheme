@@ -166,9 +166,98 @@
 		initLoopCarousel(carousel, '.dl-project-track', '.dl-project-card', '[data-project-prev]', '[data-project-next]');
 	});
 
-	document.querySelectorAll('[data-loop-carousel]').forEach(function (carousel) {
-		initLoopCarousel(carousel, '.dl-property-track', '.dl-property-banner', '[data-loop-prev]', '[data-loop-next]');
-	});
+	function initPropertySlider(slider) {
+		var slides = Array.prototype.slice.call(slider.querySelectorAll('[data-property-slide]'));
+		var dots = Array.prototype.slice.call(slider.querySelectorAll('[data-property-dot]'));
+		var prev = slider.querySelector('[data-property-prev]');
+		var next = slider.querySelector('[data-property-next]');
+		var index = 0;
+		var timer = 0;
+		var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+		function show(nextIndex) {
+			index = (nextIndex + slides.length) % slides.length;
+			slider.style.setProperty('--dl-property-index', index);
+
+			slides.forEach(function (slide, slideIndex) {
+				var focusable = slide.querySelectorAll('a, button, input, textarea, select');
+
+				if (slideIndex === index) {
+					slide.removeAttribute('aria-hidden');
+				} else {
+					slide.setAttribute('aria-hidden', 'true');
+				}
+
+				focusable.forEach(function (element) {
+					if (slideIndex === index) {
+						element.removeAttribute('tabindex');
+					} else {
+						element.setAttribute('tabindex', '-1');
+					}
+				});
+			});
+
+			dots.forEach(function (dot, dotIndex) {
+				var active = dotIndex === index;
+				dot.classList.toggle('is-active', active);
+
+				if (active) {
+					dot.setAttribute('aria-current', 'true');
+				} else {
+					dot.removeAttribute('aria-current');
+				}
+			});
+		}
+
+		function stop() {
+			window.clearInterval(timer);
+		}
+
+		function start() {
+			if (reduceMotion || slides.length < 2) {
+				return;
+			}
+
+			stop();
+			timer = window.setInterval(function () {
+				show(index + 1);
+			}, 5200);
+		}
+
+		if (slides.length < 2) {
+			return;
+		}
+
+		dots.forEach(function (dot) {
+			dot.addEventListener('click', function () {
+				show(parseInt(dot.getAttribute('data-property-dot'), 10) || 0);
+				start();
+			});
+		});
+
+		if (prev) {
+			prev.addEventListener('click', function () {
+				show(index - 1);
+				start();
+			});
+		}
+
+		if (next) {
+			next.addEventListener('click', function () {
+				show(index + 1);
+				start();
+			});
+		}
+
+		slider.addEventListener('mouseenter', stop);
+		slider.addEventListener('mouseleave', start);
+		slider.addEventListener('focusin', stop);
+		slider.addEventListener('focusout', start);
+		show(0);
+		start();
+	}
+
+	document.querySelectorAll('[data-property-slider]').forEach(initPropertySlider);
 
 	if (!canvas) {
 		return;
