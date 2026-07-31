@@ -947,58 +947,6 @@ body.dl-command-home {
 	object-position: center 18%;
 }
 
-.dl-praeva-ui {
-	position: relative;
-	display: grid;
-	width: 100%;
-	height: 100%;
-	align-content: end;
-	gap: 18px;
-	padding: 120px 32px 34px 150px;
-	border: 0;
-	border-radius: 0;
-	background:
-		linear-gradient(rgba(45, 230, 87, 0.1) 1px, transparent 1px),
-		linear-gradient(90deg, rgba(45, 230, 87, 0.1) 1px, transparent 1px),
-		radial-gradient(circle at 58% 16%, rgba(45, 230, 87, 0.28), transparent 34%),
-		linear-gradient(180deg, rgba(226, 255, 231, 0.9), rgba(224, 255, 236, 0.72));
-	background-size: 70px 70px, 70px 70px, auto, auto;
-	box-shadow: inset 0 0 90px rgba(45, 230, 87, 0.12);
-}
-
-.dl-praeva-ui::before {
-	display: block;
-	width: min(520px, 82%);
-	height: 64px;
-	margin-left: auto;
-	border: 1px solid rgba(15, 23, 42, 0.1);
-	border-radius: var(--dl-radius);
-	background:
-		linear-gradient(90deg, #111827 0 22%, transparent 22%),
-		linear-gradient(90deg, rgba(45, 230, 87, 0.16), rgba(255, 255, 255, 0.9));
-	box-shadow: 0 22px 70px rgba(0, 0, 0, 0.18);
-	content: "";
-}
-
-.dl-praeva-ui span {
-	display: block;
-	height: 74px;
-	border: 1px solid rgba(15, 23, 42, 0.1);
-	border-radius: var(--dl-radius);
-	background:
-		linear-gradient(90deg, rgba(45, 230, 87, 0.16), transparent 42%),
-		rgba(255, 255, 255, 0.84);
-	box-shadow: 0 18px 58px rgba(0, 0, 0, 0.12);
-}
-
-.dl-praeva-ui span:nth-child(3) {
-	width: 78%;
-}
-
-.dl-praeva-ui span:nth-child(4) {
-	width: 88%;
-}
-
 .dl-property-dots {
 	position: absolute;
 	right: 0;
@@ -1624,10 +1572,6 @@ body.dl-command-home {
 	.dl-property-visual img {
 		filter: saturate(1.02) contrast(1.02) brightness(0.68);
 		object-position: center;
-	}
-
-	.dl-praeva-ui {
-		padding: 116px 18px 24px 82px;
 	}
 
 	.dl-property-slider::before,

@@ -52,10 +52,22 @@ if ( ! function_exists( 'davelabs_command_get_tagged_logos' ) ) {
 	}
 }
 
+if ( ! function_exists( 'davelabs_command_asset_url' ) ) {
+	function davelabs_command_asset_url( $relative_path ) {
+		$relative_path = ltrim( $relative_path, '/' );
+		$asset_path    = get_stylesheet_directory() . '/' . $relative_path;
+
+		if ( ! file_exists( $asset_path ) ) {
+			return '';
+		}
+
+		return get_stylesheet_directory_uri() . '/' . $relative_path;
+	}
+}
+
 $header_logos = davelabs_command_get_tagged_logos( '#logo_header' );
 $brand_logo   = ! empty( $header_logos ) ? $header_logos[0]['url'] : get_stylesheet_directory_uri() . '/assets/img/logo-redes.png';
 $project_image_base = get_stylesheet_directory_uri() . '/assets/img/projects/';
-$property_image_base = get_stylesheet_directory_uri() . '/assets/img/properties/';
 
 $clients = array(
 	array( 'name' => 'Google' ),
@@ -162,7 +174,7 @@ $properties = array(
 		'items'   => array( 'CRM operativo', 'Seguimiento comercial', 'Reportes ejecutivos' ),
 		'cta'     => 'Ver Contacore',
 		'url'     => home_url( '/contacore/' ),
-		'image'   => $property_image_base . 'contacore-property.png',
+		'image'   => davelabs_command_asset_url( 'assets/img/properties/contacore-landing.png' ),
 	),
 	array(
 		'key'     => 'praeva',
@@ -172,7 +184,7 @@ $properties = array(
 		'items'   => array( 'Expedientes digitales', 'Validación de datos', 'Flujos de aprobación' ),
 		'cta'     => 'Ver Praeva',
 		'url'     => home_url( '/praeva/' ),
-		'image'   => $property_image_base . 'praeva-property.png',
+		'image'   => davelabs_command_asset_url( 'assets/img/properties/praeva-landing.png' ),
 	),
 );
 
@@ -329,18 +341,11 @@ $properties = array(
 							</div>
 							<a class="dl-button dl-button-primary" href="<?php echo esc_url( $property['url'] ); ?>"><?php echo esc_html( $property['cta'] ); ?></a>
 						</div>
-						<div class="dl-property-visual" aria-hidden="true">
-							<?php if ( ! empty( $property['image'] ) ) : ?>
+						<?php if ( ! empty( $property['image'] ) ) : ?>
+							<div class="dl-property-visual" aria-hidden="true">
 								<img src="<?php echo esc_url( $property['image'] ); ?>" alt="" loading="lazy">
-							<?php else : ?>
-								<div class="dl-praeva-ui">
-									<span></span>
-									<span></span>
-									<span></span>
-									<span></span>
-								</div>
-							<?php endif; ?>
-						</div>
+							</div>
+						<?php endif; ?>
 					</article>
 				<?php endforeach; ?>
 			</div>
