@@ -822,8 +822,8 @@ body.dl-command-home {
 	inset: 0;
 	pointer-events: none;
 	background:
-		linear-gradient(90deg, rgba(5, 7, 12, 0.98) 0%, rgba(7, 10, 17, 0.92) 34%, rgba(7, 10, 17, 0.58) 54%, rgba(7, 10, 17, 0.2) 75%, rgba(7, 10, 17, 0.64) 100%),
-		linear-gradient(180deg, rgba(3, 4, 7, 0.12), rgba(3, 4, 7, 0.36));
+		linear-gradient(180deg, rgba(3, 4, 7, 0.06), rgba(3, 4, 7, 0.24)),
+		radial-gradient(circle at 22% 0%, rgba(75, 141, 227, 0.18), transparent 42%);
 	content: "";
 }
 
@@ -852,8 +852,19 @@ body.dl-command-home {
 	top: 0;
 	right: 0;
 	bottom: 0;
-	left: 0;
+	left: 42%;
 	overflow: hidden;
+}
+
+.dl-property-visual::before {
+	position: absolute;
+	z-index: 2;
+	inset: 0;
+	pointer-events: none;
+	background:
+		linear-gradient(90deg, rgba(5, 7, 12, 1) 0%, rgba(5, 7, 12, 0.92) 10%, rgba(5, 7, 12, 0.52) 25%, rgba(5, 7, 12, 0.12) 45%, rgba(5, 7, 12, 0.26) 100%),
+		linear-gradient(180deg, rgba(5, 7, 12, 0.08), rgba(5, 7, 12, 0.36));
+	content: "";
 }
 
 .dl-property-eyebrow {
@@ -929,11 +940,11 @@ body.dl-command-home {
 }
 
 .dl-property-contacore .dl-property-visual img {
-	object-position: 78% center;
+	object-position: 76% center;
 }
 
 .dl-property-praeva .dl-property-visual img {
-	object-position: 58% 20%;
+	object-position: center 18%;
 }
 
 .dl-praeva-ui {
@@ -1464,8 +1475,8 @@ body.dl-command-home {
 
 	.dl-property-banner::after {
 		background:
-			linear-gradient(90deg, rgba(5, 7, 12, 0.98) 0%, rgba(8, 11, 18, 0.94) 44%, rgba(8, 11, 18, 0.58) 72%, rgba(8, 11, 18, 0.44) 100%),
-			linear-gradient(180deg, rgba(3, 4, 7, 0.16), rgba(3, 4, 7, 0.42));
+			linear-gradient(180deg, rgba(3, 4, 7, 0.1), rgba(3, 4, 7, 0.38)),
+			radial-gradient(circle at 22% 0%, rgba(75, 141, 227, 0.16), transparent 42%);
 	}
 
 	.dl-property-copy {
@@ -1473,6 +1484,7 @@ body.dl-command-home {
 	}
 
 	.dl-property-visual {
+		left: 30%;
 		min-height: 100%;
 	}
 }
@@ -1599,12 +1611,14 @@ body.dl-command-home {
 
 	.dl-property-banner::after {
 		background:
-			linear-gradient(90deg, rgba(5, 7, 12, 0.98) 0%, rgba(8, 11, 18, 0.94) 68%, rgba(8, 11, 18, 0.72) 100%),
-			linear-gradient(180deg, rgba(3, 4, 7, 0.2), rgba(3, 4, 7, 0.56));
+			linear-gradient(90deg, rgba(5, 7, 12, 0.96), rgba(5, 7, 12, 0.72)),
+			linear-gradient(180deg, rgba(3, 4, 7, 0.2), rgba(3, 4, 7, 0.58));
 	}
 
 	.dl-property-visual {
+		left: 0;
 		min-height: 100%;
+		opacity: 0.42;
 	}
 
 	.dl-property-visual img {
