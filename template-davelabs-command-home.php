@@ -55,6 +55,7 @@ if ( ! function_exists( 'davelabs_command_get_tagged_logos' ) ) {
 $header_logos = davelabs_command_get_tagged_logos( '#logo_header' );
 $brand_logo   = ! empty( $header_logos ) ? $header_logos[0]['url'] : get_stylesheet_directory_uri() . '/assets/img/logo-redes.png';
 $project_image_base = get_stylesheet_directory_uri() . '/assets/img/projects/';
+$property_image_base = get_stylesheet_directory_uri() . '/assets/img/properties/';
 
 $clients = array(
 	array( 'name' => 'Google' ),
@@ -161,7 +162,7 @@ $properties = array(
 		'items'   => array( 'CRM operativo', 'Seguimiento comercial', 'Reportes ejecutivos' ),
 		'cta'     => 'Ver Contacore',
 		'url'     => home_url( '/contacore/' ),
-		'image'   => $project_image_base . 'contacore.png',
+		'image'   => $property_image_base . 'contacore-property.png',
 	),
 	array(
 		'key'     => 'praeva',
@@ -171,7 +172,7 @@ $properties = array(
 		'items'   => array( 'Expedientes digitales', 'Validación de datos', 'Flujos de aprobación' ),
 		'cta'     => 'Ver Praeva',
 		'url'     => home_url( '/praeva/' ),
-		'image'   => '',
+		'image'   => $property_image_base . 'praeva-property.png',
 	),
 );
 
