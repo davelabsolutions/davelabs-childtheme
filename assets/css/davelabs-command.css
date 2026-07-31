@@ -795,9 +795,7 @@ body.dl-command-home {
 	position: relative;
 	display: grid;
 	width: 100%;
-	min-height: clamp(480px, 42vw, 610px);
-	grid-template-columns: minmax(0, 0.52fr) minmax(0, 0.48fr);
-	gap: 0;
+	min-height: clamp(500px, 42vw, 620px);
 	flex: 0 0 100%;
 	align-items: center;
 	overflow: hidden;
@@ -824,8 +822,8 @@ body.dl-command-home {
 	inset: 0;
 	pointer-events: none;
 	background:
-		linear-gradient(90deg, rgba(5, 7, 12, 0.96) 0%, rgba(7, 10, 17, 0.92) 38%, rgba(7, 10, 17, 0.48) 58%, rgba(7, 10, 17, 0.08) 78%, transparent 100%),
-		linear-gradient(180deg, rgba(3, 4, 7, 0.08), rgba(3, 4, 7, 0.24));
+		linear-gradient(90deg, rgba(5, 7, 12, 0.98) 0%, rgba(7, 10, 17, 0.92) 34%, rgba(7, 10, 17, 0.58) 54%, rgba(7, 10, 17, 0.2) 75%, rgba(7, 10, 17, 0.64) 100%),
+		linear-gradient(180deg, rgba(3, 4, 7, 0.12), rgba(3, 4, 7, 0.36));
 	content: "";
 }
 
@@ -845,7 +843,7 @@ body.dl-command-home {
 .dl-property-copy {
 	position: relative;
 	z-index: 3;
-	max-width: 560px;
+	width: min(560px, 58%);
 }
 
 .dl-property-visual {
@@ -854,7 +852,7 @@ body.dl-command-home {
 	top: 0;
 	right: 0;
 	bottom: 0;
-	width: min(68%, 900px);
+	left: 0;
 	overflow: hidden;
 }
 
@@ -927,15 +925,15 @@ body.dl-command-home {
 	height: 100%;
 	object-fit: cover;
 	object-position: center right;
-	filter: saturate(1.02) contrast(1.02);
+	filter: saturate(1.04) contrast(1.02) brightness(0.82);
 }
 
 .dl-property-contacore .dl-property-visual img {
-	object-position: 68% center;
+	object-position: 78% center;
 }
 
 .dl-property-praeva .dl-property-visual img {
-	object-position: center 24%;
+	object-position: 58% 20%;
 }
 
 .dl-praeva-ui {
@@ -1461,25 +1459,21 @@ body.dl-command-home {
 	.dl-property-banner {
 		width: 100%;
 		min-height: 620px;
-		grid-template-columns: 1fr;
 		align-content: start;
 	}
 
 	.dl-property-banner::after {
 		background:
-			linear-gradient(90deg, rgba(5, 7, 12, 0.98) 0%, rgba(8, 11, 18, 0.94) 44%, rgba(8, 11, 18, 0.52) 72%, transparent 100%),
-			linear-gradient(180deg, rgba(3, 4, 7, 0.12), rgba(3, 4, 7, 0.36));
+			linear-gradient(90deg, rgba(5, 7, 12, 0.98) 0%, rgba(8, 11, 18, 0.94) 44%, rgba(8, 11, 18, 0.58) 72%, rgba(8, 11, 18, 0.44) 100%),
+			linear-gradient(180deg, rgba(3, 4, 7, 0.16), rgba(3, 4, 7, 0.42));
 	}
 
 	.dl-property-copy {
-		max-width: 100%;
+		width: min(100%, 620px);
 	}
 
 	.dl-property-visual {
-		left: 22%;
-		width: 78%;
 		min-height: 100%;
-		opacity: 0.7;
 	}
 }
 
@@ -1605,17 +1599,16 @@ body.dl-command-home {
 
 	.dl-property-banner::after {
 		background:
-			linear-gradient(90deg, rgba(5, 7, 12, 0.98) 0%, rgba(8, 11, 18, 0.94) 62%, rgba(8, 11, 18, 0.62) 82%, transparent 100%),
-			linear-gradient(180deg, rgba(3, 4, 7, 0.18), rgba(3, 4, 7, 0.48));
+			linear-gradient(90deg, rgba(5, 7, 12, 0.98) 0%, rgba(8, 11, 18, 0.94) 68%, rgba(8, 11, 18, 0.72) 100%),
+			linear-gradient(180deg, rgba(3, 4, 7, 0.2), rgba(3, 4, 7, 0.56));
 	}
 
 	.dl-property-visual {
-		left: 0;
-		width: 100%;
-		opacity: 0.32;
+		min-height: 100%;
 	}
 
 	.dl-property-visual img {
+		filter: saturate(1.02) contrast(1.02) brightness(0.68);
 		object-position: center;
 	}
 
