@@ -446,10 +446,18 @@ $properties = array(
 			</nav>
 			<div class="dl-footer-column">
 				<h3>Contacto</h3>
-				<a href="mailto:contacto@davelabs.com.mx">contacto@davelabs.com.mx</a>
-				<a href="https://wa.me/5215534546470" target="_blank" rel="noreferrer">WhatsApp</a>
-				<span>México / remoto</span>
-				<span>Soporte y proyectos</span>
+				<a class="dl-footer-contact-link" href="tel:+525595221943" aria-label="<?php esc_attr_e( 'Llamar a DaveLabs', 'davelabs-command' ); ?>">
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.6 3.2 3.4 5 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.6 21.4 2.6 13.4 2.6 3.4c0-.7.5-1.2 1.2-1.2h3.5c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.7.6 4 .1.4 0 .9-.3 1.2l-2.2 2.2Z"/></svg>
+					<span>+52 55 9522 1943</span>
+				</a>
+				<a class="dl-footer-contact-link" href="https://wa.me/527702068784" target="_blank" rel="noreferrer" aria-label="<?php esc_attr_e( 'Abrir WhatsApp de DaveLabs', 'davelabs-command' ); ?>">
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.5L2.4 22l5.4-1.2A9.7 9.7 0 1 0 12 2.2Zm0 17.5a7.7 7.7 0 0 1-3.9-1.1l-.4-.2-3 .7.7-2.9-.2-.4a7.7 7.7 0 1 1 6.8 3.9Zm4.4-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.1-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2.1-.3 0-.5 0-.1-.5-1.3-.7-1.8-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.8-.9 2s.9 2.3 1 2.5c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1 0-.1-.2-.2-.4-.3Z"/></svg>
+					<span>+52 77 0206 8784</span>
+				</a>
+				<a class="dl-footer-contact-link" href="mailto:contacto@davelabs.com.mx" aria-label="<?php esc_attr_e( 'Enviar correo a DaveLabs', 'davelabs-command' ); ?>">
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 5h15c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2h-15c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2Zm7.5 7.6L4.8 7.2v9.6h14.4V7.2L12 12.6Zm0-2.4L16.4 7H7.6l4.4 3.2Z"/></svg>
+					<span>contacto@davelabs.com.mx</span>
+				</a>
 			</div>
 		</div>
 		<div class="dl-footer-bottom">

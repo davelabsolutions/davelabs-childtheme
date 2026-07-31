@@ -1296,6 +1296,25 @@ body.dl-command-home {
 	color: var(--dl-blue-soft);
 }
 
+.dl-footer-contact-link {
+	display: grid;
+	grid-template-columns: 28px minmax(0, 1fr);
+	align-items: center;
+	gap: 10px;
+}
+
+.dl-footer-contact-link svg {
+	width: 18px;
+	height: 18px;
+	fill: currentColor;
+	opacity: 0.9;
+}
+
+.dl-footer-contact-link span {
+	min-width: 0;
+	overflow-wrap: anywhere;
+}
+
 .dl-footer-bottom {
 	display: flex;
 	align-items: center;
